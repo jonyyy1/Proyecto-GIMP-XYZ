@@ -12,18 +12,21 @@ using namespace std;
 
 class CFiguraGeometrica {
 protected:
+    int id;
     string nombre_figura;
     vector<Coordenada*> coordenadas;
+    vector<CFiguraGeometrica*> figuras;
 public:
-    CFiguraGeometrica(string _nombre_figura,const vector<Coordenada*> c){
+    CFiguraGeometrica(int _id, string _nombre_figura,const vector<Coordenada*> c){
+        id = _id;
         nombre_figura=_nombre_figura;
         for(auto co : c){
             coordenadas.push_back(co);
         }
-
     };
 
-    virtual string get_nombre_figura(){return "";};
+    virtual string get_nombre_figura(){return nombre_figura;};
+    virtual int get_id(){return id;};
     vector<Coordenada*> get_coordenadas(){
         return coordenadas;
     }

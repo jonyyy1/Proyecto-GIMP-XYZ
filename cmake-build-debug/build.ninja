@@ -70,12 +70,6 @@ build CMakeFiles/ProyectoGIMP.dir/clases/Coordenada.cpp.o: CXX_COMPILER__Proyect
   OBJECT_DIR = CMakeFiles/ProyectoGIMP.dir
   OBJECT_FILE_DIR = CMakeFiles/ProyectoGIMP.dir/clases
 
-build CMakeFiles/ProyectoGIMP.dir/constantes/Matriz.cpp.o: CXX_COMPILER__ProyectoGIMP_Debug /Users/anonymus/CLionProjects/ProyectoGIMP/constantes/Matriz.cpp || cmake_object_order_depends_target_ProyectoGIMP
-  DEP_FILE = CMakeFiles/ProyectoGIMP.dir/constantes/Matriz.cpp.o.d
-  FLAGS = -g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk -std=gnu++14
-  OBJECT_DIR = CMakeFiles/ProyectoGIMP.dir
-  OBJECT_FILE_DIR = CMakeFiles/ProyectoGIMP.dir/constantes
-
 build CMakeFiles/ProyectoGIMP.dir/clases/Pizarra.cpp.o: CXX_COMPILER__ProyectoGIMP_Debug /Users/anonymus/CLionProjects/ProyectoGIMP/clases/Pizarra.cpp || cmake_object_order_depends_target_ProyectoGIMP
   DEP_FILE = CMakeFiles/ProyectoGIMP.dir/clases/Pizarra.cpp.o.d
   FLAGS = -g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk -std=gnu++14
@@ -90,7 +84,7 @@ build CMakeFiles/ProyectoGIMP.dir/clases/Pizarra.cpp.o: CXX_COMPILER__ProyectoGI
 #############################################
 # Link the executable ProyectoGIMP
 
-build ProyectoGIMP: CXX_EXECUTABLE_LINKER__ProyectoGIMP_Debug CMakeFiles/ProyectoGIMP.dir/main.cpp.o CMakeFiles/ProyectoGIMP.dir/clases/CFiguraGeometrica.cpp.o CMakeFiles/ProyectoGIMP.dir/clases/CLinea.cpp.o CMakeFiles/ProyectoGIMP.dir/clases/Coordenada.cpp.o CMakeFiles/ProyectoGIMP.dir/constantes/Matriz.cpp.o CMakeFiles/ProyectoGIMP.dir/clases/Pizarra.cpp.o
+build ProyectoGIMP: CXX_EXECUTABLE_LINKER__ProyectoGIMP_Debug CMakeFiles/ProyectoGIMP.dir/main.cpp.o CMakeFiles/ProyectoGIMP.dir/clases/CFiguraGeometrica.cpp.o CMakeFiles/ProyectoGIMP.dir/clases/CLinea.cpp.o CMakeFiles/ProyectoGIMP.dir/clases/Coordenada.cpp.o CMakeFiles/ProyectoGIMP.dir/clases/Pizarra.cpp.o
   FLAGS = -g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk
   OBJECT_DIR = CMakeFiles/ProyectoGIMP.dir
   POST_BUILD = :

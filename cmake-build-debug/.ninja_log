@@ -1,3 +1,7 @@
 # ninja log v5
-0	990	1667339936243316928	CMakeFiles/ProyectoGIMP.dir/main.cpp.o	ad2c8674148a1fa1
-991	1103	1667339936360508977	ProyectoGIMP	fc18010ce690423e
+39	1174	1667446312506035397	CMakeFiles/ProyectoGIMP.dir/main.cpp.o	ad2c8674148a1fa1
+7	934	1667436161737905065	CMakeFiles/ProyectoGIMP.dir/clases/CLinea.cpp.o	69854b355aa1a36e
+9	354	1667433601680738348	CMakeFiles/ProyectoGIMP.dir/clases/Coordenada.cpp.o	5859a231c466b1a0
+1174	1256	1667446312592583355	ProyectoGIMP	e0d74510634c21ae
+7	934	1667436161738040603	CMakeFiles/ProyectoGIMP.dir/clases/CFiguraGeometrica.cpp.o	2c0c4588eb3f224d
+15	354	1667433601680747389	CMakeFiles/ProyectoGIMP.dir/constantes/Matriz.cpp.o	f65abb38114e17ea

@@ -52,6 +52,30 @@ build CMakeFiles/ProyectoGIMP.dir/main.cpp.o: CXX_COMPILER__ProyectoGIMP_Debug /
   OBJECT_DIR = CMakeFiles/ProyectoGIMP.dir
   OBJECT_FILE_DIR = CMakeFiles/ProyectoGIMP.dir
 
+build CMakeFiles/ProyectoGIMP.dir/clases/CFiguraGeometrica.cpp.o: CXX_COMPILER__ProyectoGIMP_Debug /Users/anonymus/CLionProjects/ProyectoGIMP/clases/CFiguraGeometrica.cpp || cmake_object_order_depends_target_ProyectoGIMP
+  DEP_FILE = CMakeFiles/ProyectoGIMP.dir/clases/CFiguraGeometrica.cpp.o.d
+  FLAGS = -g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/ProyectoGIMP.dir
+  OBJECT_FILE_DIR = CMakeFiles/ProyectoGIMP.dir/clases
+
+build CMakeFiles/ProyectoGIMP.dir/clases/CLinea.cpp.o: CXX_COMPILER__ProyectoGIMP_Debug /Users/anonymus/CLionProjects/ProyectoGIMP/clases/CLinea.cpp || cmake_object_order_depends_target_ProyectoGIMP
+  DEP_FILE = CMakeFiles/ProyectoGIMP.dir/clases/CLinea.cpp.o.d
+  FLAGS = -g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/ProyectoGIMP.dir
+  OBJECT_FILE_DIR = CMakeFiles/ProyectoGIMP.dir/clases
+
+build CMakeFiles/ProyectoGIMP.dir/clases/Coordenada.cpp.o: CXX_COMPILER__ProyectoGIMP_Debug /Users/anonymus/CLionProjects/ProyectoGIMP/clases/Coordenada.cpp || cmake_object_order_depends_target_ProyectoGIMP
+  DEP_FILE = CMakeFiles/ProyectoGIMP.dir/clases/Coordenada.cpp.o.d
+  FLAGS = -g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/ProyectoGIMP.dir
+  OBJECT_FILE_DIR = CMakeFiles/ProyectoGIMP.dir/clases
+
+build CMakeFiles/ProyectoGIMP.dir/constantes/Matriz.cpp.o: CXX_COMPILER__ProyectoGIMP_Debug /Users/anonymus/CLionProjects/ProyectoGIMP/constantes/Matriz.cpp || cmake_object_order_depends_target_ProyectoGIMP
+  DEP_FILE = CMakeFiles/ProyectoGIMP.dir/constantes/Matriz.cpp.o.d
+  FLAGS = -g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/ProyectoGIMP.dir
+  OBJECT_FILE_DIR = CMakeFiles/ProyectoGIMP.dir/constantes
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ProyectoGIMP
@@ -60,7 +84,7 @@ build CMakeFiles/ProyectoGIMP.dir/main.cpp.o: CXX_COMPILER__ProyectoGIMP_Debug /
 #############################################
 # Link the executable ProyectoGIMP
 
-build ProyectoGIMP: CXX_EXECUTABLE_LINKER__ProyectoGIMP_Debug CMakeFiles/ProyectoGIMP.dir/main.cpp.o
+build ProyectoGIMP: CXX_EXECUTABLE_LINKER__ProyectoGIMP_Debug CMakeFiles/ProyectoGIMP.dir/main.cpp.o CMakeFiles/ProyectoGIMP.dir/clases/CFiguraGeometrica.cpp.o CMakeFiles/ProyectoGIMP.dir/clases/CLinea.cpp.o CMakeFiles/ProyectoGIMP.dir/clases/Coordenada.cpp.o CMakeFiles/ProyectoGIMP.dir/constantes/Matriz.cpp.o
   FLAGS = -g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk
   OBJECT_DIR = CMakeFiles/ProyectoGIMP.dir
   POST_BUILD = :

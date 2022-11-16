@@ -2,22 +2,32 @@
 #include "clases/CFiguraGeometrica.h"
 #include "clases/CLinea.h"
 #include "clases/Coordenada.h"
+#include "clases/CRectangulo.h"
+#include "clases/Circulo.h"
+#include "clases/Triangulo.h"
 #include <vector>
 #include "clases/Pizarra.h"
+#include "helpers/TextTable.h"
 using namespace std;
-int id = 0;
-vector<CFiguraGeometrica*> figuras;
-template<typename T>
-void imprimir(T d){
-    cout << "id : "<<d->get_id()<<endl;
-    cout <<"Figura : "<<d->get_nombre_figura()<<endl;
-    for(auto i : d->get_coordenadas()){cout <<"("<<i->get_x()<<","<<i->get_y()<<")"<<endl;}
+
+Pizarra* pizarra;
+
+void imprimir_tabla(){
+    TextTable t( '-', '|', '+' );
+    t.add( "Nro" );
+    t.add( "Tpo de figura" );
+    t.add( "Datos" );
+    t.endOfRow();
+    for(auto d: pizarra->get_figuras()){
+        t.add(to_string(d->get_id()));
+        t.add(d->get_nombre_figura());
+        for(auto i : d->get_coordenadas()){t.add("("+to_string(i->get_x())+","+to_string(i->get_y())+")");}
+        t.endOfRow();
+    }
+    t.setAlignment( 2, TextTable::Alignment::RIGHT );
+    std::cout << t;
 }
 
-
-int autoincrement_id(){
-    return id+=1;
-}
 vector<Coordenada*> obtener_coordenadas(int numero){
     vector<Coordenada*> c;
     int x=0;
@@ -43,32 +53,40 @@ int pedir_numero(){
     cin >> numero;
     return numero;
 }
-void simulation_GIMP(){
+
+void agregar_figura() {
     int numero = pedir_numero();
     vector<Coordenada*> c = obtener_coordenadas(numero);
-    CFiguraGeometrica* f;
     if(numero == 1){
-        cout <<"se creo una linea"<<endl;
-        f = new CLinea(autoincrement_id(),c);
+        //LINEA
+        pizarra->set_figura(new CLinea(c));
     }else if(numero == 2){
         //PARA EL RECTANGULO
+        pizarra->set_figura(new CRectangulo(c));
     }else if(numero == 3){
         //PARA EL CIRCULO
+        pizarra->set_figura(new Circulo(c));
     }else{
         //PARA EL TRIANGULO
+        pizarra->set_figura(new Triangulo(c));
     }
-    //AGREGAR A LA PIZARRA
-    figuras.push_back(f);
-    //REPORTE
-    imprimir(f);
+    imprimir_tabla();
 
+    pizarra->pintar_pizarra(c,numero);
 }
+int eliminar_figura(){
+    int id;
+    cout << "que figura desea eliminar ?????" << endl;
+    imprimir_tabla();
+    cin >> id;
+    return id;
+}
+
 int main() {
     int numero_a_elegir = 0;
-    int continuar = 0;
     cout <<"BIENVENIDO A GIMP"<<endl;
     cout <<"MENU"<< endl;
-    Pizarra* pizarra;
+
     while(true) {
         cout <<"1.-AGREGAR"<< endl;
         cout <<"2.-ELIMINAR"<< endl;
@@ -78,15 +96,15 @@ int main() {
         cout <<"6.-SALIR"<<endl;
         cin >> numero_a_elegir;
         if (numero_a_elegir==1){
-            pizarra->mostrar();
+            agregar_figura();
         }else if(numero_a_elegir==2){
-            //eliminar();
+            //eliminar
         }else if(numero_a_elegir==3){
             //girar();
         }else if(numero_a_elegir==4){
             //redimensionar();
         }else if(numero_a_elegir==5){
-            //mostrar();
+            pizarra->mostrar();
         }else if(numero_a_elegir==6){
             break;
         }else{

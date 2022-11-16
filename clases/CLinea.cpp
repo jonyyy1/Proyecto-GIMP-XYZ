@@ -3,5 +3,7 @@
 //
 
 #include "CLinea.h"
+CLinea::CLinea() {}
 
+CLinea::CLinea(vector<Coordenada *> c):CFiguraGeometrica("linea",c) {}
 

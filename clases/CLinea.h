@@ -8,7 +8,8 @@
 
 class CLinea : public CFiguraGeometrica{
 public :
-    CLinea(int id, const vector<Coordenada *> c) : CFiguraGeometrica(id,"Linea", c) {};
+    CLinea();
+    CLinea(vector<Coordenada *> c);
 };
 
 

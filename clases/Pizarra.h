@@ -6,38 +6,32 @@
 #define PROYECTOGIMP_PIZARRA_H
 #include <vector>
 #include "CFiguraGeometrica.h"
-#include "../constantes/Matriz.h"
-
+#include "../pantalla/Matriz.h"
+#include "CLinea.h"
 
 class Pizarra {
-    vector<CFiguraGeometrica*> figuras;
+
 public:
-    Pizarra(){}
-    void agregar(CFiguraGeometrica* f){
-        figuras.push_back(f);
-    }
-    void eliminar(int id){
-        for(auto i: figuras){
-            if(i->get_id()==id){
-                figuras.erase(figuras.begin() + id);
-                cout <<"se elimino el id : "<< id<<endl;
-            }
-        }
-    }
+    //
+// Created by Giancarlos on 2/11/22.
+//
+
+
+    Pizarra();
+    void agregar(CFiguraGeometrica* f);
+    void eliminar(int id);
+    vector<CFiguraGeometrica*>get_figuras();
+    void set_figura(CFiguraGeometrica* figura);
     void girar(){
 
     }
-    void redimensionar(){
+    int auto_increment();
+    void redimensionar();
+    void mostrar();
+    void pintar_pizarra(vector<Coordenada *> c,int _numero);
 
-    }
-    void mostrar(){
-        for(int i=0; i<10; i++){
-            for(int j=0; j<10; j++){
-                cout << matriz[i][j]<<" ";
-            }
-            cout << endl;
-        }
-    }
+
+
 /**/
 };
 

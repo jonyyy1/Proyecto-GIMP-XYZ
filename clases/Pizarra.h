@@ -18,8 +18,8 @@ public:
 
 
     Pizarra();
-    void agregar(CFiguraGeometrica* f);
-    void eliminar(int id);
+    void agregar_figura(CFiguraGeometrica* f);
+    void eliminar_figura(int id);
     vector<CFiguraGeometrica*>get_figuras();
     void set_figura(CFiguraGeometrica* figura);
     void girar(){

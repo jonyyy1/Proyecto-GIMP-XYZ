@@ -30,6 +30,9 @@ void Pizarra::set_figura(CFiguraGeometrica*figura) {
     cout <<"salio"<<endl;
 }
 
+void Pizarra::eliminar_figura(int id) {
+    figuras.erase(figuras.begin() + id-1);
+}
 void Pizarra::mostrar() {
     for(int i=0; i<12; i++){
         for(int j=0; j<12; j++){
@@ -49,7 +52,7 @@ vector<Coordenada*> get_puntos(vector<Coordenada *> c,int numero){
 
     }
 
-    return out
+    return out;
 }
 void Pizarra::pintar_pizarra(vector<Coordenada *> c,int _numero) {
     vector<Coordenada*> puntos = get_puntos(c,_numero);

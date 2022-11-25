@@ -8,6 +8,7 @@
 #include <vector>
 #include "clases/Pizarra.h"
 #include "helpers/TextTable.h"
+#include <cmath>
 using namespace std;
 
 Pizarra* pizarra;
@@ -77,7 +78,7 @@ void agregar_figura() {
         pizarra->set_figura(new Triangulo(c));
     }
     imprimir_tabla();
-
+    pizarra->pintar_pizarra(c,numero);
 }
 int eliminar_figura(){
     int id;

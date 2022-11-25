@@ -19,7 +19,7 @@ protected:
 public:
     CFiguraGeometrica();
 
-    CFiguraGeometrica(string _nombre_figura, vector<Coordenada*> c);
+    CFiguraGeometrica(string _nombre_figura,vector<Coordenada*> c);
 
     virtual string get_nombre_figura();
     virtual int get_id();

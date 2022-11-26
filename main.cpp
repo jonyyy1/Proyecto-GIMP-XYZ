@@ -27,7 +27,9 @@ void imprimir_tabla(){
         for(auto d: pizarra->get_figuras()){
             t.add(to_string(d->get_id()));
             t.add(d->get_nombre_figura());
-            for(auto i : d->get_coordenadas()){t.add("("+to_string(i->get_x())+","+to_string(i->get_y())+")");}
+            for(auto i : d->get_coordenadas()){
+                t.add("("+to_string(i->get_x())+","+to_string(i->get_y())+")");
+            }
             t.endOfRow();
         }
     }

@@ -28,7 +28,7 @@ public:
     int auto_increment();
     void redimensionar();
     void mostrar();
-    void pintar_pizarra(vector<Coordenada *> c,int _numero);
+    void pintar_pizarra(vector<Coordenada *> c,int _tipo_de_figura);
 
 
 

@@ -4,4 +4,4 @@
 
 #include "Circulo.h"
 
-Circulo::Circulo(vector<Coordenada*> c):CFiguraGeometrica("Circulo",c){}
+Circulo::Circulo(vector<Coordenada*> c, int radio):CFiguraGeometrica("Circulo",c){}

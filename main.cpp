@@ -43,6 +43,7 @@ vector<Coordenada*> obtener_coordenadas(int numero){
     int y=0;
     int condition=0;
     condition = numero == 4 ? 3 : 2;
+    condition = numero == 3 ? 1 : condition;
     for(int i=0;i<condition;i++){
         cout << "ingrese el x: "<< endl;
         cin>> x;
@@ -74,7 +75,10 @@ void agregar_figura() {
         pizarra->set_figura(new CRectangulo(c));
     } else if (numero == 3) {
         //PARA EL CIRCULO
-        pizarra->set_figura(new Circulo(c));
+        int r;
+        cout << "Ingrese el radio: "<< endl;
+        cin >> r;
+        pizarra->set_figura(new Circulo(c, r));
     } else {
         //PARA EL TRIANGULO
         pizarra->set_figura(new Triangulo(c));

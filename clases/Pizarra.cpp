@@ -18,6 +18,7 @@ string matriz[12][12] = {{"   ","  1","  2","  3","  4","  5","  6","  7","  8",
     Pizarra::Pizarra() {}
 vector<CFiguraGeometrica*> figuras;
 vector<CFiguraGeometrica*> Pizarra::get_figuras() {return figuras;}
+
 int ga = 0;
 int Pizarra::auto_increment() {
     ga = ga + 1;
@@ -32,6 +33,7 @@ void Pizarra::eliminar_figura(int id) {
     figuras.erase(figuras.begin() + id-1);
 }
 void Pizarra::mostrar() {
+    pintar_pizarra(this->get_figuras());
     for(int i=0; i<12; i++){
         for(int j=0; j<12; j++){
             cout << matriz[i][j]<<" ";
@@ -78,28 +80,42 @@ void pintar_linea(vector<Coordenada*> _c) {
     }
 }
 
-    void Pizarra::pintar_pizarra(vector<Coordenada *> _c, int _tipo_de_figura) {
-        if (_tipo_de_figura == 1) {
-            pintar_linea(_c);
-        } else if (_tipo_de_figura == 2) {
+vector<CLinea *> Pizarra::convertir_a_lineas(vector<CFiguraGeometrica *> figuras_a_convertir){
+    vector<CLinea *> lineas;
+    vector<Coordenada*> coords_actuales;
+    for (auto figura_actual : figuras_a_convertir) {
+        // Inicializando el dibujo con la línea que conecta el ultimo y el primer punto
+        coords_actuales.push_back(figura_actual->get_coordenadas()[0]);
+        coords_actuales.push_back(figura_actual->get_coordenadas()[figura_actual->get_coordenadas().size()-1]);
+        lineas.push_back(new CLinea(coords_actuales));
+        coords_actuales.clear();
 
-
-        } else if (_tipo_de_figura == 3) {
-            //circulo
-
-        } else if (_tipo_de_figura == 4) {
-            //triangulo
-            vector<Coordenada *> linea1;
-            linea1.push_back(_c[0]);
-            linea1.push_back(_c[1]);
-            pintar_linea(linea1);
-            vector<Coordenada *> linea2;
-            linea2.push_back(_c[0]);
-            linea2.push_back(_c[2]);
-            pintar_linea(linea2);
-            vector<Coordenada *> linea3;
-            linea3.push_back(_c[1]);
-            linea3.push_back(_c[2]);
-            pintar_linea(linea3);
+        // Dibujando las lineas que conectan los puntos intermedios
+        coords_actuales.push_back(figura_actual->get_coordenadas()[0]);
+        for (int i = 1; i < figura_actual->get_coordenadas().size(); i++) {
+            coords_actuales.push_back(figura_actual->get_coordenadas()[i]);
+            lineas.push_back(new CLinea(coords_actuales));
+            coords_actuales.clear();
+            coords_actuales.push_back(figura_actual->get_coordenadas()[i]);
         }
     }
+    for (auto i: lineas){
+        cout << "Linea: " << i->get_coordenadas()[0]->get_x() << "," << i->get_coordenadas()[0]->get_y() << " - " << i->get_coordenadas()[1]->get_x() << "," << i->get_coordenadas()[1]->get_y() << endl;
+    }
+    return lineas;
+}
+
+void Pizarra::pintar_pizarra(vector<CFiguraGeometrica *> figuras_a_pintar) {
+    cout << "Pintando pizarra" << endl;
+    cout << "Figuras a pintar: " << figuras_a_pintar.size() << endl;
+    for(auto i: figuras_a_pintar){
+        if(i->get_coordenadas().size() > 2) {
+            for (auto x: convertir_a_lineas(figuras_a_pintar)) {
+                pintar_linea(x->get_coordenadas());
+            }
+        }
+        else {
+            pintar_linea(i->get_coordenadas());
+        }
+    }
+}

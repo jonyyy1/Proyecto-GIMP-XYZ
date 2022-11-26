@@ -14,7 +14,6 @@ class CFiguraGeometrica {
 protected:
     int id;
     string nombre_figura;
-    vector<Coordenada*> coordenadas;
 
 public:
     CFiguraGeometrica();
@@ -26,6 +25,7 @@ public:
     void set_id(int _id);
     vector<Coordenada*> get_coordenadas();
 
+    vector<Coordenada*> coordenadas;
 };
 
 

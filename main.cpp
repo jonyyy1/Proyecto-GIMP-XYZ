@@ -20,7 +20,7 @@ void imprimir_tabla(){
     t.add( "Datos" );
     t.endOfRow();
     cout <<"tamaño"<< pizarra->get_figuras().size()<< endl;
-    if(pizarra->get_figuras().size()==0){
+    if(pizarra->get_figuras().empty()){
         t.add("No hay figuras");
         t.endOfRow();
     }else{
@@ -79,9 +79,9 @@ void agregar_figura() {
         //PARA EL TRIANGULO
         pizarra->set_figura(new Triangulo(c));
     }
-    imprimir_tabla();
-    pizarra->pintar_pizarra(c,numero);
+    // imprimir_tabla();
 }
+
 int eliminar_figura(){
     int id;
     imprimir_tabla();

@@ -28,6 +28,7 @@ string matriz[22][22] = {{"   ","  1","  2","  3","  4","  5","  6","  7","  8",
 
 
 Pizarra::Pizarra() {}
+
 vector<CFiguraGeometrica*> figuras;
 vector<CFiguraGeometrica*> Pizarra::get_figuras() {return figuras;}
 
@@ -124,6 +125,11 @@ vector<CLinea *> Pizarra::convertir_a_lineas(vector<CFiguraGeometrica *> figuras
 
 
 void Pizarra::pintar_pizarra(vector<CFiguraGeometrica *> figuras_a_pintar) {
+    for (int i = 1; i < 21; i++) {
+        for (int j = 1; j < 21; j++) {
+            matriz[i][j] = "   ";
+        }
+    }
     cout << "Pintando pizarra" << endl;
     cout << "Figuras a pintar: " << figuras_a_pintar.size() << endl;
     for(auto i: figuras_a_pintar){

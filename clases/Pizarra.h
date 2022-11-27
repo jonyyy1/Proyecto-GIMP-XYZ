@@ -16,7 +16,6 @@ public:
 // Created by Giancarlos on 2/11/22.
 //
 
-
     Pizarra();
     void agregar_figura(CFiguraGeometrica* f);
     void eliminar_figura(int id);

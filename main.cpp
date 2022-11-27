@@ -108,23 +108,30 @@ int main() {
         cout << "6.-MOSTRAR MATRIZ"<<endl;
         cout <<"7.-SALIR"<<endl;
         cin >> numero_a_elegir;
-        if (numero_a_elegir==1){
-            agregar_figura();
-        }else if(numero_a_elegir==2){
-            eliminar_figura();
-        }else if(numero_a_elegir==3){
-            //girar();
-        }else if(numero_a_elegir==4){
-            //redimensionar();
-        }else if(numero_a_elegir==5){
-            imprimir_tabla();
-        }else if(numero_a_elegir==6) {
-            pizarra->mostrar();
-        }
-        else if(numero_a_elegir==7){
-            break;
-        }else{
-            cout <<"opcion incorrecta, vuelva a elegir otro numero"<< endl;
+        switch (numero_a_elegir) {
+            case 1:
+                agregar_figura();
+                break;
+            case 2:
+                eliminar_figura();
+                break;
+            case 3:
+                // girar()
+                break;
+            case 4:
+                // redimensionar()
+                break;
+            case 5:
+                imprimir_tabla();
+                break;
+            case 6:
+                pizarra->mostrar();
+                break;
+            case 7:
+                return 0;
+            default:
+                cout << "Ingrese un numero valido" << endl;
+                break;
         }
     }
     return 0;

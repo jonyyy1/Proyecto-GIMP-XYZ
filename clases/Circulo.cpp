@@ -8,6 +8,7 @@
 Circulo::Circulo(vector<Coordenada*> c, int radioInit):CFiguraGeometrica("Circulo",c){
     int radio = radioInit;
     Coordenada * coordenada_central = c[0];
+    coordenadas_centro.push_back(coordenada_central);
     this->coordenadas.clear();
     //superior_izquierda =
     coordenadas.push_back(new Coordenada((coordenada_central->get_x()-floor(radio/2)), (coordenada_central->get_y())+radio));

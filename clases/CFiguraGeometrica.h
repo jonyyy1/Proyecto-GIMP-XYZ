@@ -17,7 +17,7 @@ protected:
 
 public:
     CFiguraGeometrica();
-
+    vector<Coordenada*> coordenadas_centro;
     CFiguraGeometrica(string _nombre_figura,vector<Coordenada*> c);
 
     virtual string get_nombre_figura();

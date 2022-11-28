@@ -136,7 +136,7 @@ void redimensionar_figura() {
         cout << "No existe la figura" << endl;
         return;
     }
-    if (pizarra->get_figuras()[id-1]->get_nombre_figura() != "Circulo" || pizarra->get_figuras()[id-1]->get_nombre_figura() != "Rectangulo") {
+    if (pizarra->get_figuras()[id-1]->get_nombre_figura() != "Circulo" && pizarra->get_figuras()[id-1]->get_nombre_figura() != "Rectangulo") {
         cout << "Solo se pueden redimensionar figuras con doble simetria (circulos y rectangulos)." << endl;
         return;
     }
@@ -162,10 +162,8 @@ void redimensionar_figura() {
         vector<Coordenada *> coordenadas_nuevas;
         int tamanoX = abs(pizarra->get_figuras()[id - 1]->get_coordenadas()[2]->get_x() -
                           pizarra->get_figuras()[id - 1]->get_coordenadas()[0]->get_x());
-        cout << "tamanoX: " << tamanoX << endl;
         int tamanoY = abs(pizarra->get_figuras()[id - 1]->get_coordenadas()[2]->get_y() -
                           pizarra->get_figuras()[id - 1]->get_coordenadas()[0]->get_y());
-        cout << "tamanoY: " << tamanoY << endl;
         coordenadas_nuevas.push_back(
                 new Coordenada(pizarra->get_figuras()[id - 1]->get_coordenadas()[0]->get_x() - tamanoX * mult / 4,
                                pizarra->get_figuras()[id - 1]->get_coordenadas()[0]->get_y() - tamanoY * mult / 4));

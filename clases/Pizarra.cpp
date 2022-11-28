@@ -116,9 +116,6 @@ vector<CLinea *> Pizarra::convertir_a_lineas(vector<CFiguraGeometrica *> figuras
     }
 
     // Eliminar este for loop en la versión final, es para debug la visualizacion se lineas modulares
-    for (auto i: lineas){
-        cout << "Linea: " << i->get_coordenadas()[0]->get_x() << "," << i->get_coordenadas()[0]->get_y() << " - " << i->get_coordenadas()[1]->get_x() << "," << i->get_coordenadas()[1]->get_y() << endl;
-    }
     return lineas;
 }
 

@@ -8,7 +8,8 @@
 
 class Circulo:public CFiguraGeometrica {
 public:
-    Circulo(vector<Coordenada*> c);
+    Circulo(vector<Coordenada*> c, int radio);
+    Coordenada * coordenada_central;
 };
 
 

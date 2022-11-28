@@ -16,7 +16,6 @@ public:
 // Created by Giancarlos on 2/11/22.
 //
 
-
     Pizarra();
     void agregar_figura(CFiguraGeometrica* f);
     void eliminar_figura(int id);
@@ -28,11 +27,10 @@ public:
     int auto_increment();
     void redimensionar();
     void mostrar();
-    void pintar_pizarra(vector<Coordenada *> c,int _numero);
-
-
 
 /**/
+    vector<CLinea *> convertir_a_lineas(vector<CFiguraGeometrica *> figuras_a_convertir);
+    void pintar_pizarra(vector<CFiguraGeometrica *> figuras_a_pintar);
 };
 
 

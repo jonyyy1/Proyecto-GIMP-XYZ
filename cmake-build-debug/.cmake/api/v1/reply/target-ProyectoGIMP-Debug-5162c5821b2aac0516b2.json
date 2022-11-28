@@ -2,7 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "ProyectoGIMP"
+			"path" : "ProyectoGIMP.exe"
+		},
+		{
+			"path" : "ProyectoGIMP.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -35,7 +38,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk"
+					"fragment" : "-g"
 				},
 				{
 					"fragment" : "-std=gnu++14"
@@ -76,12 +79,16 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
+			},
+			{
+				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
+				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
 	"name" : "ProyectoGIMP",
-	"nameOnDisk" : "ProyectoGIMP",
+	"nameOnDisk" : "ProyectoGIMP.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -116,7 +123,8 @@
 				11,
 				13,
 				15,
-				17
+				17,
+				18
 			]
 		}
 	],
@@ -219,6 +227,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "clases/Triangulo.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "funciones.h",
 			"sourceGroupIndex" : 1
 		}
 	],
